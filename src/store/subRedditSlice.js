@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-//import { getSubreddits } from '../api/reddit';
+import { getSubreddits } from '../api/reddit';
 
 const subRedditSlice = createSlice({
   name: 'subreddits',
@@ -32,15 +32,15 @@ export const {
 
 export default subRedditSlice.reducer;
 
-// // This is a Redux Thunk that gets subreddits.
-// export const fetchSubreddits = () => async (dispatch) => {
-//   try {
-//     dispatch(startGetSubreddits());
-//     const subreddits = await getSubreddits();
-//     dispatch(getSubredditsSuccess(subreddits));
-//   } catch (error) {
-//     dispatch(getSubredditsFailed());
-//   }
-// };
+// This is a Redux Thunk that gets subreddits.
+export const fetchSubreddits = () => async (dispatch) => {
+  try {
+    dispatch(startGetSubreddits());
+    const subreddits = await getSubreddits();
+    dispatch(getSubredditsSuccess(subreddits));
+  } catch (error) {
+    dispatch(getSubredditsFailed());
+  }
+};
 
-// export const selectSubreddits = (state) => state.subreddits.subreddits;
+export const selectSubreddits = (state) => state.subreddits.subreddits;
