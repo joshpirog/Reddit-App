@@ -1,16 +1,23 @@
 import React from 'react';
-import '../Avatar/Avatar.css';
+import moment from 'moment';
+import ReactMarkdown from 'react-markdown';
+import './Comment.css';
+import Avatar from '../Avatar/Avatar';
 
-const Avatar = (props) => {
-  const { name } = props;
-
+const Comment = (props) => {
+  const { comment } = props;
   return (
-    <img
-      src={`https://api.adorable.io/avatars/10/${name}`}
-      alt={`${name} profile`}
-      className="avatar-profile-image"
-    />
+    <div className="comment">
+      <div className="comment-metadata">
+        <Avatar name={comment.author} />
+        <p className="comment-author">{comment.author}</p>
+        <p className="comment-created-time">
+          {moment.unix(comment.created_utc).fromNow()}
+        </p>
+      </div>
+      <ReactMarkdown children={comment.body} />
+    </div>
   );
 };
 
-export default Avatar;
+export default Comment;

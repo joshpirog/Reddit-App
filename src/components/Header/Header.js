@@ -29,7 +29,7 @@ const Header = () => {
             <div className="logo">
                 <FaReddit className="logo-icon" />
                 <p>
-                    Reddit<span>Minimal</span>
+                    Reddit<span>Mini</span>
                 </p>
             </div>
             <form className="search" onSubmit={onSearchTermSubmit}>
@@ -38,7 +38,7 @@ const Header = () => {
                     placeholder="Search"
                     value={searchTermLocal}
                     onChange={onSearchTermChange}
-                    aria-lable="Search posts"
+                    aria-label="Search posts"
                 />
                 <button type="submit" onClick={onSearchTermSubmit} aria-label="Search">
                     <HiOutlineSearch />
