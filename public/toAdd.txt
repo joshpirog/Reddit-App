@@ -1,0 +1,3 @@
+- add specific user images to comments
+- add Subreddits images that are missing
+- add caching

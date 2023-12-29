@@ -35,7 +35,7 @@ const Subreddits = () => {
               <img
                 src={
                   subreddit.icon_img ||
-                  `https://api.adorable.io/avatars/25/${subreddit.display_name}`
+                  `./reddit.png`
                 }
                 alt={`${subreddit.display_name}`}
                 className="subreddit-icon"
